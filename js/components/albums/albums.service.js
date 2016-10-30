@@ -1,16 +1,16 @@
-function albumService($http) {
+function albumService($http, ALBUMS_CONST) {
 	this.getAlbums = function () {
+		console.log(ALBUMS_CONST);
 		return $http
-			.get('https://jsonplaceholder.typicode.com/albums')
+			.get(ALBUMS_CONST.ALBUMS)
 			.then(function (res) {
 				return res.data.slice(0,10);
 			});
 	};
 	this.getAlbumById = function(id){
 		var id = id;
-		const url = 'https://jsonplaceholder.typicode.com/albums';
 		return $http
-			.get(url,{
+			.get(ALBUMS_CONST.ALBUM_ID,{
 				params:{id:id}
 			})
 			.then(function (res) {
