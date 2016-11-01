@@ -1,0 +1,28 @@
+<table class='table'>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>User Id</th>
+        <th>Id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="record in $ctrl.records track by $index" ng-click="$ctrl.edit(record.id)">
+        <td>{{record.title}}</td>
+        <td>{{record.userId}}</td>
+        <td>{{record.id}}</td>
+    </tr>
+    </tbody>
+</table>
+<div>
+
+        <label for="byId">Get Album by Id</label>
+        <input  type="number" ng-model="$ctrl.selectedId"/>
+        <button ng-click="$ctrl.moo($ctrl.selectedId);">Get Album</button>
+
+
+    <ul>
+        <li ng-repeat="album in $ctrl.selectedAlbum">{{album.title}}</li>
+    </ul>
+
+</div>
